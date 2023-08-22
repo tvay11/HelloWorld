@@ -1,0 +1,56 @@
+.menuTrigger {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	cursor: pointer;
+  }
+  
+  .dropDownMenu {
+	position: absolute;
+	top: 100px;
+	right: 10px;
+	background-color: #1441d2;
+	border-radius: var(--border-radius);
+	padding: 10px 10px;
+	width: 300px;
+  }
+  
+  .dropDownMenu.active {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+	transition: var(--speed) ease;
+  }
+  
+  .dropDownMenu.inactive {
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-20px);
+	transition: var(--speed) ease;
+  }
+  
+  .dropDownMenu ul li{
+	list-style-type: none; /* Remove bullets */
+	padding: 0; /* Remove padding */
+	margin: 0; /* Remove margins */
+  }
+  
+  .DropDownItem {
+	display: flex;
+	margin: 10px auto;
+  }
+  
+  .DropDownItem a{
+	max-width: 200px;
+	margin-left: 10px;
+	transition: var(--speed);
+  }
+  
+  .SignInButton {
+	position: absolute;
+	top: 25px;
+	right: 10px;
+  }

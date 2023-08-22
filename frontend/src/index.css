@@ -1,0 +1,146 @@
+:root {
+  --primary-bg: #242526;
+  --secondary-bg: #fff;
+  --primary-text-color: #555;
+  --border-radius: 8px;
+  --speed: 500ms;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.image-slider {
+  margin-top: 50px;
+}
+
+.menuTrigger {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dropDownMenu {
+  position: absolute;
+  top: 80px;
+  right: 35px;
+  background-color: #dad9ef;
+  border-radius: var(--border-radius);
+  padding: 10px 10px;
+  width: 280px;
+
+}
+
+.titleName {
+  text-align: center;
+  /*font-family: Lato, sans-serif;*/
+  font-family: 'Roboto', serif;
+  font-weight: bold;
+  font-size: 56px;
+  padding: 50px;
+  opacity: 70%;
+  margin-top: 15px;
+}
+
+.dropDownMenu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: var(--speed) ease;
+
+}
+
+.dropDownMenu.inactive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease;
+}
+
+.dropDownMenu ul li{
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+.DropDownItem {
+  display: flex;
+  margin: 10px auto;
+}
+
+.DropDownItem a{
+  max-width: 200px;
+  margin-left: 10px;
+  transition: var(--speed);
+}
+
+.SignInButton {
+  position: absolute;
+  top: 25px;
+  right: 10px;
+}
+
+.LocationPresets {
+  width: 800px;
+  padding: 20px 20px;
+}
+
+.AboutUsTitle {
+	padding: 20px 20px;
+}
+
+.TeamInfoTitle {
+	margin: auto;
+	width: 50%;
+	text-align: center;
+}
+
+.TeamMembers {
+	margin: auto;
+	width: 80%;
+}
+
+.Anh {
+	
+	padding: 10px 10px;
+}
+
+.Thomas {
+	padding: 10px 10px;
+}
+
+.Anna {
+	padding: 10px 10px;
+}
+
+.Thang {
+	padding: 10px 10px;
+}
+
+.Rhett {
+	padding: 10px 10px;
+}
+
+.Technologies {
+	margin: auto;
+	width: 50%;
+	text-align: center;
+}
+

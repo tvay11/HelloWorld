@@ -1,0 +1,26 @@
+
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+}
+.imageSlide {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 22%;
+  margin-left: 10px;
+  overflow-x: auto;
+  margin-top: 7px;
+}
+
+
+.imageSlide::-webkit-scrollbar {
+  background-color: transparent;
+}
+.image{
+  width: 41vmin;
+  height: 52vmin;
+  object-fit: cover;
+  object-position: 0 center;
+}

@@ -1,0 +1,76 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    
+    "plugins": [
+        "react",
+        "react-hooks"
+    ],
+
+    "rules": {
+        "react/jsx-no-bind": ["error", {
+            "allowArrowFunctions": true,
+            "allowBind": false,
+            "ignoreRefs": true
+        }],
+        "react/no-did-update-set-state": "error",
+        "react/no-unknown-property": "error",
+        "react/no-unused-prop-types": "off",
+        "react/prop-types": "off",
+        "react/jsx-no-bind":"off",
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+ 
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "brace-style": [
+            "error",
+            "allman"
+        ],
+        "comma-dangle": [
+            "error",
+            "always-multiline"
+        ],
+        "camelcase": [
+            "error",
+            {
+                "properties": "always",
+                "ignoreGlobals": true,
+                "ignoreImports": true
+            }
+        ],
+        "padding-line-between-statements": [
+        "error",
+        { 
+            "blankLine": "always", 
+            "prev": "function", 
+            "next": "return" }
+        ]
+    }
+}

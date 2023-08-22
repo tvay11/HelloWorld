@@ -1,0 +1,58 @@
+#DEFINITION
+stages:
+    - test_backend
+    - test_frontend
+    - build
+
+#Creating actual jobs
+before_script:
+    - cd frontend
+    - npm install
+    - cd ../backend/server
+    - npm install --force
+    - cd ../..
+
+test_backend_job:
+    stage: test_backend
+    script:
+        - cd backend/server
+        - npm test
+    tags:
+        - test
+    allow_failure: false
+    rules:
+        - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+        - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+          when: always
+
+test_frontend_job:
+    stage: test_frontend
+    script:
+        - cd frontend
+        # - npm audit fix
+        - npm test
+    tags:
+        - test
+    allow_failure: false
+    rules:
+        - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+        - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+          when: always
+
+build:
+    stage: build
+    tags:
+        - build
+    script:
+        - cd frontend
+        - npm run build
+        - cd ../backend/server
+        - npm run build
+    artifacts:
+        paths:
+            - frontend/build
+            - backend/server/dist
+    allow_failure: false
+    rules:
+        - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+          when: always

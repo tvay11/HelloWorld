@@ -1,0 +1,51 @@
+
+.modalBackground {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.modalContainer {
+    top:0px;
+    position: relative;
+    height: 90vh;
+    width: 90vw;
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    border-radius: 20px;
+    z-index: 998;
+}
+.modalImage {
+    width: 85vw;
+    height: 90vh;
+    margin-right: 1rem;
+    border-radius: 20px;
+}
+h1 {
+    flex: 1;
+}
+.city{
+    font-family: 'Lato', sans-serif;
+    font-weight: 350;
+}
+.country{
+    font-family: 'Lato', sans-serif;
+    font-weight: 380;
+}
+.buttonStyle {
+    borderRadius:50px;
+    color: white;
+    height:70px;
+    width:60px;
+    fontSize:20px;
+    marginTop:10px;
+    marginRight:40px
+}
+

@@ -1,0 +1,67 @@
+{
+    "flights": [
+        {
+            "flight_number": "KL123",
+            "origin": "Amsterdam",
+            "destination": "New York",
+            "price": {
+                "currency": "EUR",
+                "total": "800.14",
+                "base": "300.00",
+                "fees": [
+                    {
+                        "amount": "0.00",
+                        "type": "SUPPLIER"
+                    },
+                    {
+                        "amount": "0.00",
+                        "type": "TICKETING"
+                    }
+                ],
+                "grandTotal": "800.14"
+            }
+        },
+        {
+            "flight_number": "BA456",
+            "origin": "London",
+            "destination": "Los Angeles",
+            "price": {
+                "currency": "EUR",
+                "total": "950.14",
+                "base": "300.00",
+                "fees": [
+                    {
+                        "amount": "0.00",
+                        "type": "SUPPLIER"
+                    },
+                    {
+                        "amount": "0.00",
+                        "type": "TICKETING"
+                    }
+                ],
+                "grandTotal": 950.14
+            }
+        },
+        {
+            "flight_number": "AF789",
+            "origin": "Paris",
+            "destination": "Tokyo",
+            "price": {
+                "currency": "EUR",
+                "total": "1200.14",
+                "base": "300.00",
+                "fees": [
+                    {
+                        "amount": "0.00",
+                        "type": "SUPPLIER"
+                    },
+                    {
+                        "amount": "0.00",
+                        "type": "TICKETING"
+                    }
+                ],
+                "grandTotal": "1200.14"
+            }
+        }
+    ]
+}
