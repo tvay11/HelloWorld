@@ -16,6 +16,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #202124;
 }
 
 code {
@@ -44,7 +45,7 @@ code {
   background-color: #dad9ef;
   border-radius: var(--border-radius);
   padding: 10px 10px;
-  width: 280px;
+  width: 240px;
 
 }
 
@@ -64,6 +65,7 @@ code {
   visibility: visible;
   transform: translateY(0);
   transition: var(--speed) ease;
+  width: 15vw;
 
 }
 
@@ -75,14 +77,14 @@ code {
 }
 
 .dropDownMenu ul li{
-  list-style-type: none; /* Remove bullets */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margins */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .DropDownItem {
   display: flex;
-  margin: 10px auto;
+  marginRight: 10px;
 }
 
 .DropDownItem a{

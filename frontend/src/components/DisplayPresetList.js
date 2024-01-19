@@ -81,9 +81,9 @@ function DisplayPresetList({addPresetLocations})
 									</Grid>
 									<Grid item xs={2}>
 										<div style ={{paddingBottom:"10px"}}>
-										<Button variant="outlined" size="small" onClick = {() => updateList(preset.title)} style={{zIndex:"0"}}>
-											{preset.title}
-										</Button>
+										{/*<Button variant="outlined" size="small" onClick = {() => updateList(preset.title)} style={{zIndex:"0"}}>*/}
+										{/*	{preset.title}*/}
+										{/*</Button>*/}
 										</div>
 									</Grid>
 								</Grid>

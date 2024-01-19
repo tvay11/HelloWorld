@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import AccountDetails from "./pages/AccountDetails";
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
+import Results from "./pages/Results";
 
 function App() {
 	const [visible, setVisible] = useState(false);
@@ -21,7 +22,7 @@ function App() {
 		<Router>
 			<div className="App">
 				<Header />
-				<div className={`content fade-in ${visible ? "visible" : ""}`}>
+				<div>
 					<Routes>
 						<Route path="/" element={<HomePage/>} />
 						<Route path="/SignIn" element={<SignInPage />} />
@@ -31,10 +32,11 @@ function App() {
 						<Route path="/SignIn" element={<SignInPage/>} />
 						<Route path="/AccountDetails" element={<AccountDetails/>} />
 						<Route path="/AboutUs" element={<AboutUs/>} />
+						<Route path="/Result" element={Results}/>
 	
 					</Routes>
 				</div>
-				<Footer />
+				{/*<Footer />*/}
 			</div>
 		</Router>
 	);

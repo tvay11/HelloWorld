@@ -25,27 +25,42 @@ const ColorlibConnector = styled(StepConnector)(({ theme, dir}) => ({
 }));
 
 const StepperSx = {
-  "& .MuiStepConnector-root": {
-    left: "calc(-50% + 20px)",
-    right: "calc(50% + 20px)"
-  },
-  "& .MuiStepConnector-line": {
-    marginTop: "22px"
-  }
+    "& .MuiStepConnector-root": {
+        left: "calc(-50% + 20px)",
+        right: "calc(50% + 20px)"
+    },
+    "& .MuiStepConnector-line": {
+        marginTop: "22px"
+    },
+    "& .MuiStepIcon-root": {
+        margin: "4px 0",
+    },
+
+    "& .MuiStepLabel-label": {
+        marginTop: "-5%",
+        color:'gray',
+    },
 };
 
 
-const LabelIcon = (props) => {
- const { active, completed, className } = props; 
- // Material UI nuisance = active checks for isDestination (active == true)
- // Material UI nuisance = completed checks for isLastStop (completed == true)
 
- if(active && completed) // isDestination && isLastStop
-      return <FmdGoodIcon className={className} color = "success"/>
-  else if (!active && completed) // not isDestination && isLastStop 
-      return <FmdGoodIcon className={className} color = "error"/>
- return <AirlinesIcon className={className} color="primary" />
+
+const LabelIcon = (props) => {
+    const { active, completed, className } = props;
+
+    const iconStyle = {
+        marginTop: '80%',
+        zIndex:'2',
+    };
+
+    if (active && completed) {
+        return <FmdGoodIcon className={className} color="success" style={iconStyle} />
+    } else if (!active && completed) {
+        return <FmdGoodIcon className={className} color="error" style={iconStyle} />
+    }
+    return <AirlinesIcon className={className} color="primary" style={iconStyle} />
 }
+
 
 export default function FlightTimeline({info}) {
 
@@ -57,8 +72,18 @@ export default function FlightTimeline({info}) {
 
 
   return (
-    <Box sx={{ width: '100%'}}>
-      <TypographyList list={info.durations}/> 
+      <Box sx={{ width: '100%', position: 'relative' }}>
+      <TypographyList list={info.durations}/>
+          <Box sx={{
+              position: 'absolute',
+              top:'1vh',
+              left: 0,
+              right: 0,
+              zIndex: 0,
+              backgroundColor: 'lightgray',
+              height: '105%',
+              borderRadius: '8px'
+          }} />
       <Stepper alternativeLabel nonLinear 
       activeStep={(direction == "outbound") ? (info.times.length-1): 0}
       connector={<ColorlibConnector dir={direction}/>}

@@ -89,7 +89,7 @@ const ImageSlider = ({handleOpenModal}) => {
     ];
 
     return(
-        <div className="imageSlide"  data-prev-percentage="0" ref={galleryRef} onScroll={handleScroll} style={{height:"500px"}}>
+        <div className="imageSlide"  data-prev-percentage="0" ref={galleryRef} onScroll={handleScroll} style={{height:"380px"}}>
             {data.map(item => (
                 <Card ImageUrl={item.ImageUrl} city={item.city} country={item.country} amadeus_airports={item.amadeus_airports} handleOpenModal={handleOpenModal} touristSpots = {item.touristSpots}/>
             ))}

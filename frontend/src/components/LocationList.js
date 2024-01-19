@@ -69,20 +69,20 @@ const LocationList = forwardRef(({inputList, displayPresetList, handleListCountC
 	return (
 		<div>
 			<SearchBar addUserItem={addLocation} />
-			<div>
-				{list.map(item => (
-					<ul key={`${item}`}>
-						<Grid container spacing={2}>
-							<IconButton aria-label="delete" size="small" onClick={() => deleteLocation(item)} style ={{right:"23px",bottom:	"3px"}}>
-								<DeleteIcon fontSize="inherit" />
-							</IconButton>
-							<div >
-								<Typography  noWrap variant="body1" style={{ position: 'absolute', left:'45px'}}>{item}</Typography>
-							</div>
-						</Grid>
-					</ul>
-				))}
-			</div>
+			{/*<div>*/}
+			{/*	{list.map(item => (*/}
+			{/*		<ul key={`${item}`}>*/}
+			{/*			/!*<Grid container spacing={2}>*!/*/}
+			{/*			/!*	<IconButton aria-label="delete" size="small" onClick={() => deleteLocation(item)} style ={{right:"23px",bottom:	"3px"}}>*!/*/}
+			{/*			/!*		<DeleteIcon fontSize="inherit" />*!/*/}
+			{/*			/!*	</IconButton>*!/*/}
+			{/*			/!*	<div >*!/*/}
+			{/*			/!*		<Typography  noWrap variant="body1" style={{ position: 'absolute', left:'45px'}}>{item}</Typography>*!/*/}
+			{/*			/!*	</div>*!/*/}
+			{/*			/!*</Grid>*!/*/}
+			{/*		</ul>*/}
+			{/*	))}*/}
+			{/*</div>*/}
 				<div>
 					{displayPresetList ? (
 						<div>

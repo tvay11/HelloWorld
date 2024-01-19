@@ -7,10 +7,18 @@ import {auth, firestore} from '../firebase/Firebase.js'
 import {useNavigate} from "react-router-dom";
 import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
 import {doc, setDoc } from "firebase/firestore";
-
+import '../css/signin.css'
+import backgroundImage from '../images/pexels-sergio-souza-1936936.jpg'
 function SignUpPage() {
 
-    const paperStyle={padding:30,height:'65vh',width:'50vh'}
+    const paperStyle = {
+        padding: 30,
+        display: 'flex',
+        flexDirection: 'column',
+        height: '65vh',
+        width: '50vh',
+        borderRadius:'8px',
+    };
     const[registerEmail,setRegisterEmail] = useState("")
     const[registerPassword,setRegisterPassword] =useState("")
     const [firstName, setFirstName] = React.useState('')
@@ -53,14 +61,16 @@ function SignUpPage() {
     return(
         <div
             style={{
-                background: 'url(https://images.unsplash.com/photo-1606768666853-403c90a981ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80)',
+                background: `url(${backgroundImage})`,
                 backgroundSize: "cover",
-                height: "95vh",
+                height: "100vh",
+                backgroundRepeat: "no-repeat",
             }}>
-            <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
-                <Grid aligh='center' >
-                    <Paper style={paperStyle}>
-                        <h2> Please Sign Up Here</h2>
+            <div className="centeredFlexContainer">
+                <Grid align='center'>
+                    <Paper className="paperStyle">
+                        <div>
+                            <h2> Sign Up</h2>
                         <div >
                             <div style={{marginLeft: '10vw'}}>
                             </div>
@@ -75,6 +85,7 @@ function SignUpPage() {
                         <Button type="Submit" fullWidth required  variant="contained" onClick={register}>Sign Up</Button>
                             </div>
                             {errorMessage && <p>{errorMessage}</p>}
+                        </div>
                         </div>
                     </Paper>
                 </Grid>

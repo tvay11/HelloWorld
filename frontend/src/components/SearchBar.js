@@ -35,7 +35,7 @@ function SearchBar({addUserItem})
 	function handleItemSelection(location) 
 	{
 		console.log(location);
-		addUserItem(location); //call function to update items in list connected to search bar
+		addUserItem(location);
 	}
 
 	return (
@@ -57,7 +57,7 @@ function SearchBar({addUserItem})
 							fetchData(inputValue);
 						}
 					}}
-					sx={{ width: 350 }}
+					sx={{ width:'100vw' }}
 					renderInput={(params) => <TextField {...params} 
 												label="Press Enter to Get Matching Airports" 
 												variant="outlined"

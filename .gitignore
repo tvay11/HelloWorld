@@ -27,10 +27,10 @@
 
 Key
 **/frontend/src/firebase/Firebase.js
-**/backend/server/amadeus.js
-**/backend/server/server.js
+**/backend/server/Amadeus/key.js
 **/frontend/.firebase
 **/frontend/.firebasesrc
 **/backend/server/firestore.js
+**/backend/server/firebaseKey.json
 
 

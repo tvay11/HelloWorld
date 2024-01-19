@@ -235,7 +235,7 @@ function AccountDetails()
 			(props) => (<MuiAccordion disableGutters elevation={0} square {...props} />))(
 			({ theme }) => ({
 			border:
-			`1px solid ${theme.palette.divider}`,
+			`0px solid ${theme.palette.divider}`,
 			"&:not(:last-child)": {borderBottom: 0},
 			"&:before": {display: "none"},
 			}));
@@ -248,7 +248,7 @@ function AccountDetails()
 		))(({ theme }) => ({
 			backgroundColor:
 		theme.palette.mode === "dark" 
-			? "rgba(255, 255, 255, .05)"
+			? "rgba(255, 255, 255, 20)"
 			: "rgba(0, 0, 0, .03)",
 			flexDirection: "row-reverse",
 			"& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
@@ -260,7 +260,7 @@ function AccountDetails()
 
 	const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 		padding: theme.spacing(2),
-		borderTop: "1px solid rgba(0, 0, 0, .125)",
+		borderTop: "0px solid rgba(0, 0, 0, .125)",
 		}));
 
 	return (
@@ -280,13 +280,21 @@ function AccountDetails()
 					</div>
 				</div>
 			) : (
-				<div>
-				<h1 className="titleName">Account Preference</h1>
+				<Paper style={{
+					padding: '20px',
+					margin: '20px auto',
+					maxWidth: '800px',
+					backgroundColor: 'white',
+					boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)',
+					borderRadius: '8px',
+					marginTop:'100px'
+				}}>
+				{/*<h1 Sty>Account Preference</h1>*/}
 				<div className = "LocationPresets">
 					<h2 style={{ color: `${colors.Orange}` }}> 
 						Location Presets 
 					</h2>
-					<Alert severity = "info" style={{width:"95vw"}}>
+					<Alert severity = "info" style={{width:"49vw"}}>
 						Create Up to 5 Location Presets
 					</Alert>
 					
@@ -331,7 +339,7 @@ function AccountDetails()
 								return (
 									<div key={preset.title}>
 										<Accordion key = {preset.title} >
-											<AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+											<AccordionSummary aria-controls="panel1d-content" id="panel1d-header" style={{width:'51vw'}}>
 												<Grid container spacing={-5}>
 													<Typography> {preset.title} </Typography>
 													<IconButton aria-label="delete" size="small" onClick={() => handleRenameOpen(preset.title, presetChildRef)}>
@@ -340,22 +348,32 @@ function AccountDetails()
 												</Grid>
 											</AccordionSummary>
 											<AccordionDetails>
-												<LocationList displayPresetList = {false} ref={presetChildRef} inputList={preset.locations} />
-												<Button 
-													sx = {{height: 55}}
-													variant="contained"  
-													onClick = {() => savePresetList(index, presetChildRef)} // get updated value of editable list to pass to backend
+												<LocationList displayPresetList={false} ref={presetChildRef} inputList={preset.locations}  />
+												<div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
+													<Button
+														sx={{ height: 50, marginRight: '8px' }}
+														variant="contained"
+														onClick={() => savePresetList(index, presetChildRef)}
 													>
-													SAVE PRESET
-												</Button>
-												<Button 
-													sx = {{height: 55}}
-													variant="contained"  
-													onClick = {() => deleteSelectedPreset(preset.title)} 
+														SAVE PRESET
+													</Button>
+													<Button
+														sx={{
+															height: 50,
+															backgroundColor: 'gray',
+															'&:hover': {
+																backgroundColor: 'gray',
+															},
+														}}
+														variant="contained"
+														onClick={() => deleteSelectedPreset(preset.title)}
 													>
-													DELETE PRESET
-												</Button>
+														DELETE PRESET
+													</Button>
+												</div>
 											</AccordionDetails>
+
+
 										</Accordion>
 									</div>
 								);
@@ -387,13 +405,10 @@ function AccountDetails()
 						)}
 					</div>
 				</div>
-				</div>
+				</Paper>
 			)}
-
 		</div>
 	);
-
-
 }
 
 export default AccountDetails;

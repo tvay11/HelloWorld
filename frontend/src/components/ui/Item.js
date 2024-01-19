@@ -13,12 +13,10 @@ export default function Item(props) {
         ml:1,
         bgcolor: WebsiteTheme().palette[props.id].main,
         color: WebsiteTheme().palette[props.id].contrastText,
-        border: '1px solid',
-        borderColor: (theme) =>
-          theme.palette.mode === 'dark' ? 'grey.800' : 'grey.300',
-        borderRadius: 2,
+        borderRadius: 3,
         fontSize: '0.875rem',
         fontWeight: '700',
+          zIndex: '2',
         ...sx,
       }}
       {...other}

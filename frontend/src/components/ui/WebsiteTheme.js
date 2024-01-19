@@ -8,7 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 const WebsiteTheme = () => createTheme({
 	palette: {
 		primary: {
-			main: "#e57b37", //orange
+			main: "#ff8533",
 			contrastText: '#ffffff'
 		},
 		secondary:{

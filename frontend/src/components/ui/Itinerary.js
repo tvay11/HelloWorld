@@ -12,9 +12,9 @@ export default function Itinerary({info, price, oneWay, widthSpec})
 {
   const tripType = info.trip;
   const dir = info.dir;
-  
+  const cost = price
     return (
-      
+
         <Box
           sx={{
             display: 'flex',
@@ -22,47 +22,40 @@ export default function Itinerary({info, price, oneWay, widthSpec})
             flexDirection: 'column',
             p: 1,
             m: 1,
-            bgcolor: 'background.paper',
+            backgroundColor: 'white',
             border: 1,
-            width: widthSpec,
-            borderRadius: '32px',
-            color : tripType === "one-way" ? 
+            width: '35vw',
+            borderRadius: '16px',
+            color : tripType === "one-way" ?
                   'black':'#d9d9d9',
+          height:'24vh',
+
           }}
         >
           <Box
-            sx={{ display: 'flex', 
-              flexDirection: 'row', 
-              bgcolor: 'background.paper' 
+            sx={{ display: 'flex',
+              flexDirection: 'row',
+              backgroundColor: 'background.paper',
+                justifyContent: 'space-between',
             }}
           >
-            <Item id = {dir === "outbound" ? "origin" : "destination"}>
-              {dir === "outbound" ? "Origin" : "Destination"}
-              </Item>
-            <EastIcon style={{color: 'black',
-                              marginTop: '10px' }}/>
-            <Item id = {dir === "inbound" ? "origin" : "destination"}> {dir === "inbound" ? "Origin" : "Destination"}</Item>
-            <Item id="primary">{info.journey[0] + " → " + info.journey[1]}</Item>
+
+              <Item id="primary">{info.journey[0] + " → " + info.journey[1]}</Item>
 
           </Box>
 
           <FlightTimeline info={info}/>
           
-          <Grid container justifyContent="flex-end">
-            <Typography variant="h6" color="#6c6c6c" gutterBottom={true} sx={{m:2}}>
-              {"Flight Numbers: " + info.flightNumbers}
-            </Typography>
-          </Grid> : 
-          <Grid container justifyContent="flex-end"/>
+
           
         {
-            oneWay ? 
+            // oneWay ?
             <Grid container justifyContent="flex-end">
               <Typography variant="h6" color="#6c6c6c" gutterBottom={true} sx={{m:2}}>
-                {"$" + price + " per ticket"}
+                {/*{"$" + {cost}}*/}
               </Typography>
-            </Grid> : 
-            <Grid container justifyContent="flex-end"/>
+            </Grid>
+            // <Grid container justifyContent="flex-end"/>
         } 
 
           

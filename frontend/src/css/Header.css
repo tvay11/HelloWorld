@@ -1,49 +1,59 @@
 .menuTrigger {
 	position: absolute;
-	top: 20px;
-	right: 20px;
-	height: 60px;
-	width: 60px;
+	top: 1.5vw;
+	right: 1vw;
+	height: 5vh;
+	width: 7.5vh;
 	border-radius: 50%;
 	cursor: pointer;
   }
-  
+
   .dropDownMenu {
 	position: absolute;
-	top: 100px;
-	right: 10px;
-	background-color: #1441d2;
-	border-radius: var(--border-radius);
+	top: 9vh;
+	right: 1.5vw;
+	background-color: rgb(245,245,245,0.8);
+	border-radius: 8px;
 	padding: 10px 10px;
-	width: 300px;
+	width: 10vw;
   }
-  
+
   .dropDownMenu.active {
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(0);
-	transition: var(--speed) ease;
+	transition: 0.5s;
+	width: 13vw;
   }
-  
+
   .dropDownMenu.inactive {
 	opacity: 0;
 	visibility: hidden;
 	transform: translateY(-20px);
-	transition: var(--speed) ease;
+	transition: 0.5s;
+  	width: 13vw;
   }
   
   .dropDownMenu ul li{
-	list-style-type: none; /* Remove bullets */
-	padding: 0; /* Remove padding */
-	margin: 0; /* Remove margins */
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
   }
   
   .DropDownItem {
 	display: flex;
 	margin: 10px auto;
   }
-  
-  .DropDownItem a{
+  .DropDownText{
+	 margin-left: 3vw;
+
+  }
+.whiteTextButton {
+	color: white;
+}
+
+
+.DropDownItem a{
 	max-width: 200px;
 	margin-left: 10px;
 	transition: var(--speed);

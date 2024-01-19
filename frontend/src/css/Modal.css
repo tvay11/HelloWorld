@@ -1,3 +1,16 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.modalContainer.closing {
+    animation: fadeOut 0.5s ease forwards;
+}
 
 .modalBackground {
     position: fixed;
@@ -5,26 +18,27 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 999;
 }
 .modalContainer {
-    top:0px;
+    top:-2vh;
     position: relative;
-    height: 90vh;
-    width: 90vw;
-    background-color: #fff;
+    height: 85vh;
+    width: 85vw;
+    background-color: #202124;
     padding: 10px;
     display: flex;
     border-radius: 20px;
     z-index: 998;
+    animation: fadeIn 0.5s ease forwards;
 }
 .modalImage {
-    width: 85vw;
-    height: 90vh;
+    width: 80vw;
+    height: 85vh;
     margin-right: 1rem;
     border-radius: 20px;
 }
@@ -49,3 +63,46 @@ h1 {
     marginRight:40px
 }
 
+
+/* Modal.css */
+.customButton {
+    border-radius: 16px;
+    color: white;
+    height:10vh;
+    width: 17vw;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    outline: none;
+    border: none;
+}
+
+
+
+.searchButton {
+    background: rgba(20, 65, 210, 0.7);
+}
+
+.bookButton {
+    background: rgba(229, 123, 55, 0.7);
+}
+
+.placesContainer {
+    background: rgb(34, 5, 45, 0.7);
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 245px;
+}
+
+.placesTitle {
+    color: white;
+    font-size: 22px;
+    text-align: center;
+}
+
+.placesItem {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
