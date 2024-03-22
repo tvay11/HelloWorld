@@ -60,6 +60,7 @@ jobs:
       - name: Build frontend
         run: |
           cd frontend
+          npm install react-scripts
           npm run build
       - name: Build backend
         run: |
